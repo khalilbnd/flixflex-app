@@ -19,17 +19,16 @@ Flix Flex is a mobile application built with **Expo** and **Firebase** that allo
 ## 📸 Screenshots
 
 ### 🔹 Movie List
-![Screenshot_1742877414](https://github.com/user-attachments/assets/148065ba-09bd-4a4a-bee1-e6fcdb66d685)
-
+<img src="https://github.com/user-attachments/assets/148065ba-09bd-4a4a-bee1-e6fcdb66d685" width="300"/>
 
 ### 🔹 TV Shows List
-![Screenshot_1742877420](https://github.com/user-attachments/assets/68926743-d5aa-44f2-a2a8-2170f71aeeeb)
+<img src="https://github.com/user-attachments/assets/68926743-d5aa-44f2-a2a8-2170f71aeeeb" width="300"/>
 
 ### 🔹 Movie Details
-![Screenshot_1742877443](https://github.com/user-attachments/assets/12d47f51-72f0-42ff-8e40-048bd1d05c35)
+<img src="https://github.com/user-attachments/assets/12d47f51-72f0-42ff-8e40-048bd1d05c35" width="300"/>
 
 ### 🔹 Search Page
-![Screenshot_1742877433](https://github.com/user-attachments/assets/ee3dced6-fed4-4c7f-af5f-7222e43a66da)
+<img src="https://github.com/user-attachments/assets/ee3dced6-fed4-4c7f-af5f-7222e43a66da" width="300"/>
 
 
 ---
