@@ -1,0 +1,29 @@
+{
+    "project_info": {
+        "project_number": "388742211778",
+        "project_id": "flixflex-app",
+        "storage_bucket": "flixflex-app.firebasestorage.app"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:388742211778:android:55872696c5246ab6e9f35b",
+                "android_client_info": {
+                    "package_name": "com.khalilbnd.flixflexapp"
+                }
+            },
+            "oauth_client": [],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyCHnyBL345bJT0Iq70-RrZreHjMl0ZVCLw"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": []
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

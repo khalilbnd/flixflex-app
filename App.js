@@ -1,20 +1,54 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext, useEffect, useState, useMemo } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { AuthContext, AuthProvider } from './src/context/AuthContext';
+import AuthStack from './src/navigation/AuthStack';
+import AppStack from './src/navigation/AppStack';
+import { StatusBar, ActivityIndicator, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+const { Screen, Navigator } = createStackNavigator();
+
+const App = () => {
+  const [userInfo, setUserInfo] = useState(null);
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const fetchedUser = await AsyncStorage.getItem('user');
+        setUserInfo(fetchedUser ? JSON.parse(fetchedUser) : null);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [setLoading]);
+
+  const initialRouteName = useMemo(() => (userInfo ? 'App' : 'Auth'), [userInfo]);
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthProvider>
+      <NavigationContainer>
+        <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
+        <Navigator initialRouteName={initialRouteName}>
+          <Screen options={{ headerShown: false }} name="App" component={AppStack} />
+          <Screen options={{ headerShown: false }} name="Auth" component={AuthStack} />
+        </Navigator>
+      </NavigationContainer>
+    </AuthProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
